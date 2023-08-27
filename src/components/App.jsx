@@ -9,9 +9,7 @@ import { selectContacts } from 'redux/ContactsSlice';
 export default function App (){
 
   const contacts = useSelector(selectContacts)
-  const dispatch = useDispatch()
 
-  
       return (
         <>
         <Title title="Phonebook" />

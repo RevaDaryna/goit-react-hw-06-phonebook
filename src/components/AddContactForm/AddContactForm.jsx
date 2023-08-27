@@ -1,5 +1,4 @@
 import css from './AddContactForm.module.css';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/ContactsSlice';
 import { selectContacts } from 'redux/ContactsSlice';
@@ -16,8 +15,6 @@ export default function AddContactForm(){
     const name = form.elements.name.value
     const number = form.elements.number.value
 
-    
-    let contactExists = false;
     
     if(contacts.some(contact => contact.name === name)){
       alert(`${name} is already in contacts`);
