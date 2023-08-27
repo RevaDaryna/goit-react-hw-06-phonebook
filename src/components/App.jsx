@@ -1,16 +1,35 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import  AddContactForm  from './AddContactForm/AddContactForm';
+import { ContactList } from './ContactList/ContactList';
+import { Title } from './Title/Title';
+import { Filter } from './Filter/Filter';
+import { NotificationMessage } from 'components/NotificationMessage/NotificationMessage';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from 'redux/ContactsSlice';
+
+export default function App (){
+
+  const contacts = useSelector(selectContacts)
+  const dispatch = useDispatch()
+
+  
+      return (
+        <>
+        <Title title="Phonebook" />
+        <AddContactForm />
+        <Title title="Contacts" />
+        {contacts.length !== 0 ? (
+          <>
+          <Filter />
+          <ContactList />
+          </>
+        ) : (
+          <NotificationMessage />
+        )}
+          
+        </>
+      )
+      
+
+
+}
+
