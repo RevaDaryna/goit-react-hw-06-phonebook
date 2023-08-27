@@ -3,7 +3,7 @@ import { ContactList } from './ContactList/ContactList';
 import { Title } from './Title/Title';
 import { Filter } from './Filter/Filter';
 import { NotificationMessage } from 'components/NotificationMessage/NotificationMessage';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/ContactsSlice';
 
 export default function App (){
