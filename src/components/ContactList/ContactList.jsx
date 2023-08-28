@@ -17,7 +17,7 @@ const ContactList = () => {
       {filteredContacts?.map(({ id, name, number }) => (
         <li key={id}>
           <p>
-            {name}:{number}
+            {name}:{number} 
           </p>
           <button
             type="button"
